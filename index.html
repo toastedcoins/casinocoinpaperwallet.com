@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>CasinoCoin Paper Wallet Generator</title>
+ <!-- The key generator is code written by wenusch https://github.com/wenusch -->
+ <!-- Design is by OctillionSA https://github.com/OctillionSA/ripple-paper-wallet -->
+  <meta charset="UTF-8">
+ <script src="js/lodash.js"></script> 
+  <script src="js/casinocoinapi.js"></script>
+  <script src="js/qrcode.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+
+<body onload="generate()">
+  <div id="paper" class="wallet">
+<!--    <img src="./images/wallet.png"/> -->
+	<img id="imageToSwap" class="profile" src="./images/wallet.png">
+    <div class="amount-added-text">Amount added</div>
+    <div class="date-text">Date</div>
+    <div class="note-text">Note</div>
+    <div class="instruction-text">
+      <ul>
+        <li>
+          To deposit funds to this CasinoCoin paper wallet: send CSC to the <b>public</b> address
+        </li>
+        <li>
+          To check the balance of this wallet:<br/>
+          go to <a href="http://explorer.casinocoin.org" target="_blank">explorer.casinocoin.org</a> and<br/>
+          enter the <b>public</b> address
+        </li>
+        <li>
+          <b>DO NOT REVEAL THE PRIVATE KEY</b> until you are ready to import the balance of this wallet to a CasinoCoin client, exchange or online wallet
+        </li>
+      </ul>
+    </div>
+    <div id="secret" class="secret-text"><span id="secrtext"></span></div>
+    <div id="address" class="address-text"><span id="addrtext"></span></div>
+    <div id="qrsecr" class="qr-secret"></div>
+    <div id="qraddr" class="qr-address"></div>
+  </div>
+  <div class="buttons">
+    <button type="button" onclick="generate()">Generate new</button>
+    <button type="button" onClick="window.print()">Print</button>
+<select onchange="$('#imageToSwap').attr('src', this.options[this.selectedIndex].value);">
+    <option value="./images/wallet.png" selected>Deck Of Cards</option>
+    <option value="./images/walletclassicred.png">Classic Red</option>
+    <option value="./images/walletclassicredlogo.png">Classic Red with Logo</option>
+</select>
+                        
+ </div>
+  <div class="instruction">
+    <img src="./images/instruction.png"/>
+  </div>
+  <script src="js/script.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(101103442); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101103442ns.gif" /></p></noscript>
+
+</body>
+</html>
